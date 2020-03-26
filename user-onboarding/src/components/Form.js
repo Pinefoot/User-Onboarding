@@ -21,14 +21,14 @@ function Form (){
         name: '',
         email: '',
         password: '',
-        terms: '',
+        terms: ''
     })
     //here lies the state for the error of your ways.
     const [errors, setErrors] = useState({
         name: '',
         email: '',
         password: '',
-        terms: '',
+        terms: ''
     })
     //here you shall find, if you believe, the state of our fair button.
     const [buttonDisabled, setButtonDisabled] = useState(true);
@@ -136,7 +136,7 @@ function Form (){
                 checked={formState.terms}
                 onChange= {inputChange}>
                 </input> {`Do Yee Accept These Terms of Services?!  `}
-                {errors.terms.length > 0 ? (<p className='error'>{errors.terms}</p>):null}
+               <p className='error'>{errors.terms}</p>
             </label><br/>
                 
                 <button className="button" disabled={buttonDisabled}>Submit You Nerd.</button>
