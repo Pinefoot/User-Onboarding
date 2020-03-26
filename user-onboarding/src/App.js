@@ -6,10 +6,12 @@ import './App.css';
 
 function App() {
   return (
+    <div className="colordemension">
     <div className="App">
-      <h1>Sign up!</h1>
-      <Form />
       
+      <h1>Sign Up To Enter The Void!</h1>
+      <Form />
+      </div>
     </div>
   );
 }

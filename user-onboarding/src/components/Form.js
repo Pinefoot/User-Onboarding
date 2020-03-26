@@ -49,7 +49,7 @@ function Form (){
         yup
         .reach(formSchema, e.target.name)
         .validate(e.target.name === 'terms' ? e.target.checked : e.target.value)
-        .then(valid =>{
+        .then(() =>{
             setErrors({
                 ...errors, [e.target.name]: ''
             }) ;
@@ -93,8 +93,8 @@ function Form (){
 
     //form return statement. below this lives the great form beast. enter if you dare.
     return(
-        <form onSubmit={formSubmit}>
-            <label htmlFor="name">Name
+        <form className = 'form-style' onSubmit={formSubmit}>
+            <label className="labelName" htmlFor="name">{`Name:  `} 
                 <input 
                 id = 'name'
                 name="name"
@@ -104,9 +104,9 @@ function Form (){
                 >
                 </input>
                 {errors.name.length > 0 ? (<p className='error'>{errors.name}</p>):null}
-            </label>
+            </label><br/>
                 
-            <label htmlFor="email">Email
+            <label className="labelEmail" htmlFor="email">{`Email:  `}
                 <input 
                 id='email'
                 name='email'
@@ -116,9 +116,9 @@ function Form (){
                 >
                 </input>
                 {errors.email.length > 0 ? (<p className='error'>{errors.email}</p>):null}
-            </label>
+            </label><br/>
                 
-            <label htmlFor="password">Password
+            <label className="labelPass" htmlFor="password">{`Password:  `}
                 <input
                 id='password'
                 name='password'
@@ -127,20 +127,20 @@ function Form (){
                 onChange= {inputChange}>
                 </input>
                 {errors.password.length > 0 ?( <p className='error'>{errors.password}</p>):null}
-            </label>
+            </label><br/>
                 
-            <label htmlFor="terms">
+            <label className="labelTerms" htmlFor="terms">
                 <input 
                 name="terms"
                 type="checkbox"
                 checked={formState.terms}
                 onChange= {inputChange}>
-                </input>Terms of Service
+                </input> {`Do Yee Accept These Terms of Services?!  `}
                 {errors.terms.length > 0 ? (<p className='error'>{errors.terms}</p>):null}
-            </label>
-                <pre>{JSON.stringify(users, null, 2)}</pre>
-                <button disabled={buttonDisabled}>Submit You Nerd.</button>
-
+            </label><br/>
+                
+                <button className="button" disabled={buttonDisabled}>Submit You Nerd.</button>
+                <pre className='Json'>{JSON.stringify(users, null, 2)}</pre>
 
 
 
